@@ -1,0 +1,88 @@
+### Cadastro de Funcionario
+POST http://localhost:3000/funcionario
+Content-Type: application/json
+
+{
+    "nome": "Larissa",
+    "email": "larissa@gmail.com",
+    "senha": "123"
+}
+
+### Cadastro de Funcionario
+POST http://localhost:3000/funcionario
+Content-Type: application/json
+
+{
+    "nome": "Luiza",
+    "email": "luiza@gmail.com",
+    "senha": "123"
+}
+
+### Cadastro de Funcionario
+POST http://localhost:3000/funcionario
+Content-Type: application/json
+
+{
+    "nome": "Mario",
+    "email": "mario@gmail.com",
+    "senha": "123"
+}
+
+### Login do Funcionario
+# @name LogReq
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "larissa@gmail.com",
+    "senha": "123"
+}
+
+### Cadastro de Obra
+POST http://localhost:3000/obra
+Content-Type: application/json
+Authorization: {{LogReq.request.body.token}}
+
+{
+    "nome": "Larissa",
+    "cnpj": "12345678912",
+    "tipoObra": "casa"
+}
+
+### Cadastro de Obra
+POST http://localhost:3000/obra
+Content-Type: application/json
+Authorization: {{LogReq.request.body.token}}
+
+{
+    "nome": "Ueslei",
+    "cnpj": "12345678913",
+    "tipoObra": "prédio"
+}
+
+### Cadastro de Obra
+POST http://localhost:3000/obra
+Content-Type: application/json
+Authorization: {{LogReq.request.body.token}}
+
+{
+    "nome": "Weslei",
+    "cnpj": "12345678914",
+    "tipoObra": "apartamento"
+}
+
+### Listagem de Obra
+GET  http://localhost:3000/obras
+Content-Type: application/json
+Authorization: {{LogReq.request.body.token}}
+
+### Consultar Obra por código
+GET  http://localhost:3000/obra/1
+Content-Type: application/json
+Authorization: {{LogReq.request.body.token}}
+
+### Consultar Obra por nome
+GET  http://localhost:3000/obra/Weslei
+Content-Type: application/json
+Authorization: {{LogReq.request.body.token}}
+
